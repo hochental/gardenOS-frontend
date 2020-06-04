@@ -1,0 +1,14 @@
+<table>
+  <th>Id</th>
+  <th>Adress</th>
+  <th>Nr ulicy</th>
+  <th>Nr mieszkania</th>
+  <th>Informacje dodatkowe</th>
+  <tr *ngFor="let adress of adresses">
+    <td>{{adress.id}}</td>
+    <td>{{adress.adress}}</td>
+    <td>{{adress.streetNumber}}</td>
+    <td>{{adress.homeNumber}}</td>
+    <td>{{adress.extra}}</td>
+  </tr>
+</table>

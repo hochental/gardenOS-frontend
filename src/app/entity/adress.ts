@@ -6,4 +6,5 @@ export class Adress {
   streetNumber: number;
   homeNumber: number;
   extra: string;
+  client: Client;
 }

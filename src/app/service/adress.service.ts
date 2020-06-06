@@ -8,14 +8,17 @@ import {Adress} from '../entity/adress';
 })
 export class AdressService {
 
-  private usersUrl: string;
+  private adressUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/rest';
+    this.adressUrl = 'http://localhost:8080/rest';
   }
 
   public findAll(): Observable<Adress[]> {
-    return this.http.get<Adress[]>(this.usersUrl+'/all/adresses');
+    return this.http.get<Adress[]>(this.adressUrl+'/all/adresses');
   }
 
+  save(newAdres: Adress) {
+    return this.http.post(this.adressUrl+'/adress',newAdres)
+  }
 }

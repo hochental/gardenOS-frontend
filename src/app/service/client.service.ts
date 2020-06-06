@@ -9,13 +9,21 @@ import {Client} from '../entity/client';
 })
 export class ClientService {
 
-  private usersUrl: string;
+  private clientUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/rest';
+    this.clientUrl = 'http://localhost:8080/rest';
+  }
+
+  public findById(clientId: number): Observable<Client>{
+    return this.http.get<Client>(this.clientUrl+'/client/'+clientId);
   }
 
   public findAll(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.usersUrl+'/all/clients');
+    return this.http.get<Client[]>(this.clientUrl+'/all/clients');
+  }
+
+  public save(client: Client) {
+    return this.http.post<Client>(this.clientUrl+'/client', client)
   }
 }

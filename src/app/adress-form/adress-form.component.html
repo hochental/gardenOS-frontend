@@ -1,0 +1,24 @@
+<form>
+  <label><b>Nazwa ulicy</b></label>
+  <input class="form-control " type="string" name="adress"
+         [(ngModel)]="adress.adress"
+         placeholder=""
+         #streetname="ngModel">
+  <label><b>Numer ulicy</b></label>
+  <input class="form-control " type="string" name="streetNumber"
+         [(ngModel)]="adress.streetNumber"
+         placeholder=""
+         #streetNumber="ngModel">
+  <label><b>Numer mieszkania</b></label>
+  <input class="form-control " type="string" name="homeNumber"
+         [(ngModel)]="adress.homeNumber"
+         placeholder=""
+         #homeNumber="ngModel">
+  <label><b>Extra</b></label>
+  <input class="form-control " type="string" name="extra"
+         [(ngModel)]="adress.extra"
+         placeholder=""
+         #extra="ngModel">
+  <br>
+  <button>Dodaj </button>
+</form>

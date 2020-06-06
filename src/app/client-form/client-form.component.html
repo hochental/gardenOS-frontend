@@ -1,0 +1,29 @@
+<form>
+      <label><b>Imie</b></label>
+      <input class="form-control " type="string" name="name"
+             [(ngModel)]="client.name"
+             placeholder=""
+             #name="ngModel">
+      <label><b>Nazwisko</b></label>
+      <input class="form-control " type="text" name="surrname"
+             [(ngModel)]="client.surrname"
+             placeholder=""
+             #surrname="ngModel">
+      <label><b>Numer telefonu</b></label>
+      <input class="form-control " type="string" name="telephoneNumber"
+             [(ngModel)]="client.telephoneNumber"
+             placeholder=""
+             #telephoneNumber="ngModel">
+      <label><b>E-mail</b></label>
+      <input class="form-control " type="string" name="email"
+             [(ngModel)]="client.email"
+             placeholder=""
+             #email="ngModel">
+      <label><b>Informacje dodatkowe</b></label>
+      <input class="form-control " type="textarea" name="extra"
+             [(ngModel)]="client.extra"
+             placeholder=""
+             #extra="ngModel">
+  <br>
+  <button>Dodaj </button>
+</form>

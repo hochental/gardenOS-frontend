@@ -25,4 +25,9 @@ export class AdressService {
   save(newAdres: Adress) {
     return this.http.post(this.adressUrl+'/adress',newAdres)
   }
+
+  public saveWithClient (adress:Adress){
+    return this.http.post<Adress>(this.adressUrl+'/client-full', adress)
+  }
+
 }

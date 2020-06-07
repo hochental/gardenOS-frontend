@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Client} from '../entity/client';
+import {Adress} from '../entity/adress';
 
 @Component({
   selector: 'app-client-form',
@@ -11,9 +12,15 @@ export class ClientFormComponent implements OnInit {
   @Input()
   client: Client;
 
+  @Input()
+  adress: Adress;
+
+  isClicked: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+  this.isClicked=false;
   }
 
 }

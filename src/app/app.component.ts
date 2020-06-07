@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {User} from './entity/user';
+import {UserService} from './service/login/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gardenOS-frontend';
+
+  user:User;
+  constructor(private userService: UserService){
+    this.user=new User();
+    userService.getUserLogged().subscribe( newuser => {this.user=newuser})
+  }
+
 }

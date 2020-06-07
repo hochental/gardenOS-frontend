@@ -1,0 +1,16 @@
+<table>
+  <th>Imie</th>
+  <th>Nazwisko</th>
+  <th>Email</th>
+  <th>Numer telefonu</th>
+  <th>Extra</th>
+  <th>Lista adresów</th>
+  <tr>
+  <td>{{client.name}}</td>
+  <td>{{client.surrname}}</td>
+  <td>{{client.email}}</td>
+  <td>{{client.telephoneNumber}}</td>
+  <td>{{client.extra}}</td>
+  <td *ngFor="let adress of client.adressList">{{adress.adress}}</td>
+  </tr>
+</table>

@@ -18,6 +18,10 @@ export class AdressService {
     return this.http.get<Adress[]>(this.adressUrl+'/all/adresses');
   }
 
+  public findById(id: number): Observable<Adress>{
+    return this.http.get<Adress>(this.adressUrl+'/adress/'+id)
+  }
+
   save(newAdres: Adress) {
     return this.http.post(this.adressUrl+'/adress',newAdres)
   }

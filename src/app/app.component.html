@@ -2,8 +2,8 @@
   <a routerLink="/list-clients">Lista klientów</a>
   <a routerLink="/list-adresses">Lista adresów</a>
   <a routerLink="/add-client">Dodaj kleinta</a>
-  <a routerLink="/">Zaloguj się</a> <!--Warunek sprawdzajacy czy user jest zalogowany (dodac po stronie serwera)-->
-  <a routerLink="/">Wyloguj się</a>
+  <a *ngIf="user==null" href="http://localhost:8080/login">Login</a>
+  <a *ngIf="user!=null" href="http://localhost:8080/logout">Logout</a>
 
 </nav>
 <br>

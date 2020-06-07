@@ -12,6 +12,10 @@ import { ClientAddComponent } from './client-add/client-add.component';
 import { AdressFormComponent } from './adress-form/adress-form.component';
 import { AdressAddComponent } from './adress-add/adress-add.component';
 import {FormsModule} from '@angular/forms';
+import { AdressEditComponent } from './adress-edit/adress-edit.component';
+import { ClientEditComponent } from './client-edit/client-edit.component';
+import { ClientSingleComponent } from './client-single/client-single.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import {FormsModule} from '@angular/forms';
     ClientFormComponent,
     ClientAddComponent,
     AdressFormComponent,
-    AdressAddComponent
+    AdressAddComponent,
+    AdressEditComponent,
+    ClientEditComponent,
+    ClientSingleComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

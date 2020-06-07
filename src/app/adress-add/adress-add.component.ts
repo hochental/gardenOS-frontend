@@ -19,15 +19,12 @@ export class AdressAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.newAdress = new Adress();
-console.log(Number(this.route.snapshot.paramMap.get('id')));
     this.clientService.findById(Number(this.route.snapshot.paramMap.get('id'))).subscribe(
       data => {this.client=data})
-    console.log(this.client)
     }
 
   onSubmit() {
     this.newAdress.client=this.client;
-    console.log(this.newAdress);
     this.adressService.save(this.newAdress).subscribe(()=>{
       this.newAdress = new Adress();
       this.router.navigate(['/list-clients'])

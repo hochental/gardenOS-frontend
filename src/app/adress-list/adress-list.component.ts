@@ -16,9 +16,6 @@ export class AdressListComponent implements OnInit {
   ngOnInit(): void {
     this.adressService.findAll().subscribe(
       data => {this.adresses=data})
-
-    console.log(this.adresses)
-
   }
 
 }

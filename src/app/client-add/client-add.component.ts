@@ -19,6 +19,7 @@ export class ClientAddComponent implements OnInit {
   }
 
   onSubmit(){
+    /*dodac tutaj przypisywanie adresu podczas dodawania klienta*/
     this.clientService.save(this.newClient).subscribe(()=>{
       this.newClient = new Client();
       this.router.navigate(['/list-clients'])

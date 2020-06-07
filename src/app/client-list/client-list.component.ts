@@ -16,9 +16,6 @@ export class ClientListComponent implements OnInit {
   ngOnInit(): void {
     this.clientService.findAll().subscribe(
       data => {this.clients=data})
-
-    console.log(this.clients)
-
   }
 
 }

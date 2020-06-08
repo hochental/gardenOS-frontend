@@ -18,4 +18,8 @@ export class AdressListComponent implements OnInit {
       data => {this.adresses=data})
   }
 
+  delete(id: number){
+    this.adressService.delete(id).subscribe(()=>{window.location.reload()});
+  }
+
 }

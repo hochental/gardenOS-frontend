@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Adress} from '../entity/adress';
 import {Client} from '../entity/client';
 
 @Injectable({
@@ -25,5 +24,9 @@ export class ClientService {
 
   public save(client: Client) {
     return this.http.post<Client>(this.clientUrl+'/client', client)
+  }
+
+  public delete(clientId: number) {
+    return this.http.delete(this.clientUrl+'/client/'+clientId)
   }
 }

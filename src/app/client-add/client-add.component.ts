@@ -27,14 +27,13 @@ export class ClientAddComponent implements OnInit {
       this.newAdresses.client = this.newClient;
       this.adressService.saveWithClient(this.newAdresses).subscribe(() => {
         this.newAdresses = new Adress();
-        this.router.navigate(['/list-clients'])
       })
   }else{
     this.clientService.save(this.newClient).subscribe( () =>{
       this.newClient=new Client();
-      this.router.navigate(['/list-clients'])
     })
   }
+    this.router.navigate(['/list-clients'])
   }
 
 }

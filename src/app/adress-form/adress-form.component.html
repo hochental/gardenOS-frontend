@@ -1,24 +1,31 @@
 <form>
   <label><b>Nazwa ulicy</b></label>
   <input class="form-control " type="string" name="adress"
+         required
          [(ngModel)]="adress.adress"
          placeholder=""
-         #streetname="ngModel">
+         #validator_street="ngModel">
+  <div *ngIf="validator_street.errors && clicked" class="alert alert-danger">
+        Musisz podać nazwę ulicy
+  </div>
   <label><b>Numer ulicy</b></label>
-  <input class="form-control " type="string" name="streetNumber"
+  <input class="form-control" type="string" name="streetNumber"
+         required
          [(ngModel)]="adress.streetNumber"
          placeholder=""
-         #streetNumber="ngModel">
+         #validator_number="ngModel">
+  <div *ngIf="validator_number.errors && clicked" class="alert alert-danger">
+        Musisz podać numer domu
+  </div>
   <label><b>Numer mieszkania</b></label>
-  <input class="form-control " type="string" name="homeNumber"
+  <input class="form-control" type="string" name="homeNumber"
          [(ngModel)]="adress.homeNumber"
-         placeholder=""
-         #homeNumber="ngModel">
+         placeholder="">
   <label><b>Extra</b></label>
-  <input class="form-control " type="string" name="extra"
+  <input class="form-control" type="string" name="extra"
          [(ngModel)]="adress.extra"
-         placeholder=""
-         #extra="ngModel">
+         placeholder="">
   <br>
-  <button>Dodaj </button>
+  <button class="btn btn-success" *ngIf="validator_street.errors || validator_number.errors" (click)="clicked=true" type="button">Dodaj</button>
+  <button class="btn btn-success" *ngIf="!validator_street.errors && !validator_number.errors" >Dodaj</button>
 </form>

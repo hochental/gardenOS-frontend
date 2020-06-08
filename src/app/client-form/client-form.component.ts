@@ -16,6 +16,7 @@ export class ClientFormComponent implements OnInit {
   adress: Adress;
 
   isClicked: boolean;
+  clicked: boolean;
 
   constructor() { }
 

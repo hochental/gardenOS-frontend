@@ -30,4 +30,8 @@ export class AdressService {
     return this.http.post<Adress>(this.adressUrl+'/client-full', adress)
   }
 
+  public delete(adressId: number) {
+    return this.http.delete(this.adressUrl+'/adress/'+adressId)
+  }
+
 }

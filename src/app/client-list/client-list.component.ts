@@ -18,4 +18,8 @@ export class ClientListComponent implements OnInit {
       data => {this.clients=data})
   }
 
+  delete(id: number){
+    this.clientService.delete(id).subscribe(()=>{window.location.reload()});
+  }
+
 }

@@ -11,6 +11,6 @@
   <td>{{client.email}}</td>
   <td>{{client.telephoneNumber}}</td>
   <td>{{client.extra}}</td>
-  <td *ngFor="let adress of client.adressList">{{adress.adress}}</td>
+  <td *ngFor="let adress of client.adressList"> {{adress.adress}} {{adress.streetNumber}} <i *ngIf="adress.homeNumber">/ </i> {{adress.homeNumber}}</td>
   </tr>
 </table>

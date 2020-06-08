@@ -10,6 +10,7 @@ export class AdressFormComponent implements OnInit {
 
   @Input()
   adress: Adress;
+  clicked: boolean;
 
   constructor() { }
 

@@ -15,6 +15,9 @@ export class ClientFormComponent implements OnInit {
   @Input()
   adress: Adress;
 
+  @Input()
+  clientLockown: boolean;
+
   isClicked: boolean;
   clicked: boolean;
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div *ngIf="!clientLockown" class="row">
     <div class="col-sm">
       <br>
       <form>
@@ -152,6 +152,64 @@
       <button class="btn btn-info">Wygeneruj PDF</button>
     </div>
   </div>
+
+  <div *ngIf="clientLockown" class="row">
+    <div class="col-sm">
+      <br>
+      <form>
+        <label><b>Imie</b></label>
+        <input class="form-control " type="string" name="name"
+               required
+               [(ngModel)]="client.name"
+               placeholder=""
+               #name="ngModel">
+        <div *ngIf="name.errors && clicked" class="alert alert-danger">
+          Musisz podać imie
+        </div>
+        <br>
+        <label><b>Nazwisko</b></label>
+        <input class="form-control " type="text" name="surrname"
+               required
+               [(ngModel)]="client.surrname"
+               placeholder=""
+               #surrname="ngModel">
+        <div *ngIf="surrname.errors && clicked" class="alert alert-danger">
+          Musisz podać nazwisko
+        </div>
+        <br>
+        <label><b>Numer telefonu</b></label>
+        <input class="form-control " type="string" name="telephoneNumber"
+               pattern="[0-9]{9}"
+               required
+               [(ngModel)]="client.telephoneNumber"
+               placeholder=""
+               #telephoneNumber="ngModel">
+        <div *ngIf="telephoneNumber.errors && clicked" class="alert alert-danger">
+          Musisz podać odpowiedni numer telefonu
+        </div>
+        <br>
+        <label><b>E-mail</b></label>
+        <input class="form-control " type="string" name="email"
+               email
+               [(ngModel)]="client.email"
+               placeholder=""
+               #email="ngModel">
+        <div *ngIf="email.errors && clicked" class="alert alert-danger">
+          Musisz podać email w odpowiedniej formie [przykładowo nazwa@nazwa.pl]
+        </div>
+        <br>
+        <label><b>Informacje dodatkowe</b></label>
+        <input class="form-control " type="textarea" name="extra"
+               [(ngModel)]="client.extra"
+               placeholder=""
+               #extra="ngModel">
+        <br>
+        <button *ngIf="!isClicked && !name.errors && !surrname.errors && !telephoneNumber.errors && !email.errors && !extra.errors" class="btn btn-success">Dodaj klienta</button>
+        <button type="button" *ngIf="!isClicked && (name.errors || surrname.errors || telephoneNumber.errors || email.errors || extra.errors)" class="btn btn-success" (click)="clicked=true">Dodaj klienta</button>
+      </form>
+    </div>
+
+
 </div>
 
 

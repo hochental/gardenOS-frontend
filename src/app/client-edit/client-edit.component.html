@@ -1,1 +1,5 @@
-<p>client-edit works!</p>
+<app-client-form *ngIf="editedClient"
+                 [client]="editedClient"
+                 [clientLockown]="true"
+                 (submit)="onSubmit()">
+</app-client-form>

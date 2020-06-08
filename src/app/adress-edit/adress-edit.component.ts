@@ -23,8 +23,9 @@ export class AdressEditComponent implements OnInit {
   }
 
   onSubmit(){
-    this.adressService.save(this.editedAdress)
-      .subscribe( ()=> {this.router.navigate(['/'])}) /*Dodac wyswietlanie dla jednego klienta*/
+    this.editedAdress.id=Number(this.route.snapshot.paramMap.get('id'));
+    this.adressService.put(this.editedAdress)
+      .subscribe( ()=> {this.router.navigate(['/list-clients'])})
   }
 
 }
